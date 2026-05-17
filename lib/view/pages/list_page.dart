@@ -31,9 +31,9 @@ class ListPage extends StatelessWidget {
                   size: 48,
                 ),
                 const SizedBox(height: 12),
-                Text(
+                const Text(
                   'Gagal memuat data',
-                  style: TextStyle(color: Colors.white.withOpacity(0.7)),
+                  style: TextStyle(color: Colors.white70),
                 ),
                 const SizedBox(height: 12),
                 ElevatedButton(
@@ -55,7 +55,6 @@ class ListPage extends StatelessWidget {
             itemCount: ctrl.items.length + (ctrl.hasMore.value ? 1 : 0),
             itemBuilder: (ctx, i) {
               if (i == ctrl.items.length) {
-                // load more trigger
                 WidgetsBinding.instance.addPostFrameCallback(
                   (_) => ctrl.fetchItems(),
                 );
@@ -84,7 +83,7 @@ class ListPage extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: const Color(0xFF141B2D),
                     borderRadius: BorderRadius.circular(14),
-                    border: Border.all(color: Colors.white.withOpacity(0.07)),
+                    border: Border.all(color: Colors.white12),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -100,8 +99,9 @@ class ListPage extends StatelessWidget {
                                 height: 180,
                                 width: double.infinity,
                                 fit: BoxFit.cover,
-                                errorBuilder: (_, __, ___) => _imgPlaceholder(),
-                                loadingBuilder: (_, child, progress) =>
+                                errorBuilder: (ctx, err, stack) =>
+                                    _imgPlaceholder(),
+                                loadingBuilder: (ctx, child, progress) =>
                                     progress == null ? child : _imgLoading(),
                               )
                             : _imgPlaceholder(),
@@ -148,19 +148,23 @@ class ListPage extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Row(
+                                const Row(
                                   children: [
                                     Icon(
                                       Icons.calendar_today_outlined,
                                       size: 12,
-                                      color: Colors.white.withOpacity(0.4),
+                                      color: Colors.white38,
                                     ),
-                                    const SizedBox(width: 4),
+                                    SizedBox(width: 4),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
                                     Text(
                                       item.formattedDate,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 11,
-                                        color: Colors.white.withOpacity(0.4),
+                                        color: Colors.white38,
                                       ),
                                     ),
                                   ],
@@ -168,9 +172,8 @@ class ListPage extends StatelessWidget {
                                 Container(
                                   padding: const EdgeInsets.all(6),
                                   decoration: BoxDecoration(
-                                    color: const Color(
-                                      0xFF4F8EF7,
-                                    ).withOpacity(0.15),
+                                    color: const Color(0xFF4F8EF7)
+                                        .withValues(alpha: 0.15),
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                   child: const Icon(
@@ -196,25 +199,25 @@ class ListPage extends StatelessWidget {
   }
 
   Widget _imgPlaceholder() => Container(
-    height: 180,
-    width: double.infinity,
-    color: const Color(0xFF1C2740),
-    child: const Icon(
-      Icons.image_not_supported_outlined,
-      color: Colors.white24,
-      size: 48,
-    ),
-  );
+        height: 180,
+        width: double.infinity,
+        color: const Color(0xFF1C2740),
+        child: const Icon(
+          Icons.image_not_supported_outlined,
+          color: Colors.white24,
+          size: 48,
+        ),
+      );
 
   Widget _imgLoading() => Container(
-    height: 180,
-    width: double.infinity,
-    color: const Color(0xFF1C2740),
-    child: const Center(
-      child: CircularProgressIndicator(
-        strokeWidth: 2,
-        color: Color(0xFF4F8EF7),
-      ),
-    ),
-  );
+        height: 180,
+        width: double.infinity,
+        color: const Color(0xFF1C2740),
+        child: const Center(
+          child: CircularProgressIndicator(
+            strokeWidth: 2,
+            color: Color(0xFF4F8EF7),
+          ),
+        ),
+      );
 }

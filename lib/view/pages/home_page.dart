@@ -45,11 +45,11 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 4),
-                  Text(
+                  const Text(
                     'Pilih kategori berita',
                     style: TextStyle(
                       fontSize: 13,
-                      color: Colors.white.withOpacity(0.5),
+                      color: Colors.white54,
                     ),
                   ),
                   const SizedBox(height: 40),
@@ -120,10 +120,10 @@ class _MenuCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: const Color(0xFF141B2D),
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: color.withOpacity(0.3)),
+          border: Border.all(color: color.withValues(alpha: 0.3)),
           boxShadow: [
             BoxShadow(
-              color: color.withOpacity(0.15),
+              color: color.withValues(alpha: 0.15),
               blurRadius: 16,
               offset: const Offset(0, 4),
             ),
@@ -134,7 +134,7 @@ class _MenuCard extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(14),
               decoration: BoxDecoration(
-                color: color.withOpacity(0.15),
+                color: color.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(icon, color: color, size: 28),
@@ -155,9 +155,9 @@ class _MenuCard extends StatelessWidget {
                   const SizedBox(height: 4),
                   Text(
                     subtitle,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 12,
-                      color: Colors.white.withOpacity(0.5),
+                      color: Colors.white54,
                     ),
                   ),
                 ],

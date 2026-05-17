@@ -30,7 +30,7 @@ class RegisterPage extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.all(18),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF4F8EF7).withOpacity(0.15),
+                      color: const Color(0xFF4F8EF7).withValues(alpha: 0.15),
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(
@@ -52,12 +52,12 @@ class RegisterPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 6),
-                Center(
+                const Center(
                   child: Text(
                     'Daftar untuk mengakses Space News',
                     style: TextStyle(
                       fontSize: 13,
-                      color: Colors.white.withOpacity(0.5),
+                      color: Colors.white54,
                     ),
                   ),
                 ),
@@ -126,10 +126,10 @@ class RegisterPage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Sudah punya akun? ',
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.5),
+                        color: Colors.white54,
                         fontSize: 13,
                       ),
                     ),

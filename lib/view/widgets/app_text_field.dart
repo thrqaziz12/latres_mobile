@@ -32,8 +32,8 @@ class _AppTextFieldState extends State<AppTextField> {
       style: const TextStyle(color: Colors.white, fontSize: 14),
       decoration: InputDecoration(
         labelText: widget.label,
-        labelStyle: TextStyle(
-          color: Colors.white.withOpacity(0.5),
+        labelStyle: const TextStyle(
+          color: Colors.white54,
           fontSize: 14,
         ),
         prefixIcon: Icon(
@@ -61,7 +61,7 @@ class _AppTextFieldState extends State<AppTextField> {
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(color: Colors.white.withOpacity(0.08)),
+          borderSide: const BorderSide(color: Colors.white12),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),

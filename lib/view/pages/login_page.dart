@@ -29,7 +29,7 @@ class LoginPage extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.all(18),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF4F8EF7).withOpacity(0.15),
+                      color: const Color(0xFF4F8EF7).withValues(alpha: 0.15),
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(
@@ -51,12 +51,12 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 6),
-                Center(
+                const Center(
                   child: Text(
                     'Masuk untuk melanjutkan',
                     style: TextStyle(
                       fontSize: 13,
-                      color: Colors.white.withOpacity(0.5),
+                      color: Colors.white54,
                     ),
                   ),
                 ),
@@ -92,10 +92,10 @@ class LoginPage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Belum punya akun? ',
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.5),
+                        color: Colors.white54,
                         fontSize: 13,
                       ),
                     ),

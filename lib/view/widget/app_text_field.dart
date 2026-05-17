@@ -32,12 +32,18 @@ class _AppTextFieldState extends State<AppTextField> {
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         labelText: widget.label,
-        labelStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
-        prefixIcon: Icon(widget.prefixIcon, color: const Color(0xFF4F8EF7), size: 20),
+        labelStyle: const TextStyle(color: Colors.white54),
+        prefixIcon: Icon(
+          widget.prefixIcon,
+          color: const Color(0xFF4F8EF7),
+          size: 20,
+        ),
         suffixIcon: widget.isPassword
             ? IconButton(
                 icon: Icon(
-                  _obscure ? Icons.visibility_off_outlined : Icons.visibility_outlined,
+                  _obscure
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
                   color: Colors.white38,
                   size: 20,
                 ),
@@ -48,11 +54,11 @@ class _AppTextFieldState extends State<AppTextField> {
         fillColor: const Color(0xFF141B2D),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(color: Colors.white.withOpacity(0.1)),
+          borderSide: const BorderSide(color: Colors.white12),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(color: Colors.white.withOpacity(0.1)),
+          borderSide: const BorderSide(color: Colors.white12),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),

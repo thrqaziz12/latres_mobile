@@ -24,7 +24,7 @@ class PrimaryButton extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color(0xFF4F8EF7),
             foregroundColor: Colors.white,
-            disabledBackgroundColor: const Color(0xFF4F8EF7).withOpacity(0.5),
+            disabledBackgroundColor: const Color(0xFF4F8EF7).withValues(alpha: 0.5),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),

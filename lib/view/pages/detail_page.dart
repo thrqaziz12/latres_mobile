@@ -6,11 +6,9 @@ class DetailPage extends StatelessWidget {
   const DetailPage({super.key});
 
   void _openUrl(BuildContext context, String url) async {
-    // Tampilkan URL di dialog karena tidak pakai url_launcher
-    // Jika ingin buka browser, tambahkan package url_launcher
     showDialog(
       context: context,
-      builder: (_) => AlertDialog(
+      builder: (ctx) => AlertDialog(
         backgroundColor: const Color(0xFF141B2D),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         title: const Text(
@@ -91,7 +89,7 @@ class DetailPage extends StatelessWidget {
                       width: double.infinity,
                       height: 240,
                       fit: BoxFit.cover,
-                      errorBuilder: (_, __, ___) => Container(
+                      errorBuilder: (ctx, err, stack) => Container(
                         height: 240,
                         color: const Color(0xFF1C2740),
                         child: const Icon(
@@ -151,23 +149,23 @@ class DetailPage extends StatelessWidget {
                     // Date
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.calendar_today_outlined,
                           size: 14,
-                          color: Colors.white.withOpacity(0.45),
+                          color: Colors.white54,
                         ),
                         const SizedBox(width: 6),
                         Text(
                           item.formattedDate,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 12,
-                            color: Colors.white.withOpacity(0.45),
+                            color: Colors.white54,
                           ),
                         ),
                       ],
                     ),
                     const SizedBox(height: 20),
-                    Divider(color: Colors.white.withOpacity(0.1)),
+                    const Divider(color: Colors.white12),
                     const SizedBox(height: 16),
                     // Summary
                     const Text(
@@ -183,9 +181,9 @@ class DetailPage extends StatelessWidget {
                       item.summary.isNotEmpty
                           ? item.summary
                           : 'Tidak ada ringkasan tersedia.',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 14,
-                        color: Colors.white.withOpacity(0.75),
+                        color: Colors.white70,
                         height: 1.7,
                       ),
                     ),
