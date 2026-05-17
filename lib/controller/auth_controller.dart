@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../routes/app_routes.dart';
@@ -55,7 +56,7 @@ class AuthController extends GetxController {
         'Password salah',
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: const Color(0xFFE53935),
-        colorText: const Color(0xFFFFFFFF),,
+        colorText: const Color(0xFFFFFFFF),
       );
       return;
     }
