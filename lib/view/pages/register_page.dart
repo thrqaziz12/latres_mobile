@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controller/auth_controller.dart';
-import '../widgets/app_text_field.dart';
-import '../widgets/primary_button.dart';
+import '../widget/app_text_field.dart';
+import '../widget/primary_button.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
@@ -67,8 +67,9 @@ class RegisterPage extends StatelessWidget {
                   label: 'Username',
                   prefixIcon: Icons.person_outline_rounded,
                   validator: (v) {
-                    if (v == null || v.trim().isEmpty)
+                    if (v == null || v.trim().isEmpty) {
                       return 'Username wajib diisi';
+                    }
                     if (v.trim().length < 3) return 'Minimal 3 karakter';
                     return null;
                   },
@@ -79,8 +80,9 @@ class RegisterPage extends StatelessWidget {
                   label: 'Email',
                   prefixIcon: Icons.email_outlined,
                   validator: (v) {
-                    if (v == null || v.trim().isEmpty)
+                    if (v == null || v.trim().isEmpty) {
                       return 'Email wajib diisi';
+                    }
                     if (!v.contains('@')) return 'Email tidak valid';
                     return null;
                   },

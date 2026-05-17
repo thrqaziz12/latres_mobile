@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controller/auth_controller.dart';
 import '../../routes/app_routes.dart';
-import '../widgets/app_text_field.dart';
-import '../widgets/primary_button.dart';
+import '../widget/app_text_field.dart';
+import '../widget/primary_button.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
